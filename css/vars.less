@@ -1,0 +1,103 @@
+// main: style.less
+
+// Цвета из Figma
+@primary:         #8D644B;   // Primary
+@primary-medium:  #D3C5B7;   // Primary Medium
+@primary-light:   #F6F3EE;   // Primary Light
+
+@neutral:         #EAEAEA;   // Neutral
+@text:            #3A3634;   // Text
+@white:           #FFFFFF;   // White
+
+// Назначения
+@text-primary:    @primary;
+@text-light:      @neutral;
+@dark:            @text;
+
+@border-radius-sm: 16px;
+
+@font-primary: 'Monument Extended', sans-serif;
+@font-secondary: 'Geometria', sans-serif;
+
+@breakpoint-mobile-sm: ~"(max-width: 575px)";
+@breakpoint-mobile: ~"(max-width: 767px)";
+@breakpoint-mobile-min: ~"(min-width: 768px)";
+@breakpoint-tablet: ~"(max-width: 991px)";
+@breakpoint-tablet-min: ~"(min-width: 992px)";
+@breakpoint-tablet-xl: ~"(max-width: 1199px)";
+@breakpoint-laptop: ~"(min-width: 1200px) and (max-width: 1440px)";
+@breakpoint-laptop-xl: ~"(max-width: 1440px)";
+@breakpoint-desktop: ~"(min-width: 1400px)";
+@breakpoint-desktop-xl: ~"(min-width: 1921px)";
+
+@transition: all 0.4s ease-in-out;
+
+
+@font-path: '../fonts/geometria';
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('@{font-path}/Geometria.woff2') format('woff2'),
+       url('@{font-path}/Geometria.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('@{font-path}/Geometria-Bold.woff2') format('woff2'),
+       url('@{font-path}/Geometria-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('@{font-path}/Geometria-BoldItalic.woff2') format('woff2'),
+       url('@{font-path}/Geometria-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('@{font-path}/Geometria-Italic.woff2') format('woff2'),
+       url('@{font-path}/Geometria-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('@{font-path}/Geometria-Medium.woff2') format('woff2'),
+       url('@{font-path}/Geometria-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('@{font-path}/Geometria-MediumItalic.woff2') format('woff2'),
+       url('@{font-path}/Geometria-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-path-monument: '../fonts/monument';
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: url('@{font-path-monument}/MonumentExtended-Regular.woff2') format('woff2'),
+       url('@{font-path-monument}/MonumentExtended-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: url('@{font-path-monument}/MonumentExtended-Ultrabold.woff2') format('woff2'),
+       url('@{font-path-monument}/MonumentExtended-Ultrabold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
