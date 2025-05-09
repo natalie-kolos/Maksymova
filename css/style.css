@@ -322,11 +322,11 @@ h6 {
   color: #FFFFFF;
 }
 .btn-custom {
-  padding: 12px 24px 12px 24px;
-  border-radius: 16px;
+  padding: 12px 20px 12px 20px;
+  border-radius: 4px;
   transition: all 0.4s ease-in-out;
   font-family: 'Geometria', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -337,6 +337,9 @@ h6 {
   gap: 4px;
   text-transform: uppercase;
   letter-spacing: 0.64px;
+}
+.btn-custom:hover {
+  opacity: 0.8;
 }
 @media (max-width: 1199px) {
   .btn-custom {
@@ -356,10 +359,19 @@ h6 {
   background-color: #8D644B;
   transition: all 0.4s ease-in-out;
 }
+.btn-custom.btn-custom__primary-reverse {
+  color: #8D644B;
+  background-color: #FFFFFF;
+  transition: all 0.4s ease-in-out;
+}
 .btn-custom.btn-custom__outline__primary {
   background-color: transparent;
   color: #8D644B;
   border: 1px solid #8D644B;
+}
+.btn-custom.btn-custom__outline__primary:hover {
+  color: #FFFFFF;
+  background-color: #8D644B;
 }
 .btn-custom.btn-text {
   color: #8D644B;
@@ -389,8 +401,33 @@ h6 {
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
 }
+.btn-custom.btn-custom__outline-reverse:hover {
+  color: #8D644B;
+  background-color: #FFFFFF;
+}
 .btn-outline-light .bi-search::before {
   color: #8D644B;
+}
+.btn-img {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 44px;
+}
+.btn-img::after {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='14' viewBox='0 0 18 14' fill='none'><path d='M1.5 7H16.0833H1.5Z' fill='white'/><path d='M1.5 7H16.0833' stroke='%238D644B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M10.6665 12.8334L16.4998 7.00008L10.6665 1.16675' stroke='%238D644B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .navbar-main-custom {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -420,6 +457,12 @@ h6 {
 }
 .navbar .navbar-brand img {
   width: 240px;
+  margin-right: 12px;
+}
+@media (max-width: 767px) {
+  .navbar .navbar-brand img {
+    width: 220px;
+  }
 }
 .navbar .navbar-brand p {
   border-top: 2px solid #1D306A;
@@ -460,9 +503,6 @@ h6 {
     font-size: 20px;
   }
 }
-.navbar .navbar-custom {
-  align-items: flex-end;
-}
 .navbar .navbar-custom .navbar-nav {
   align-items: center;
 }
@@ -481,7 +521,7 @@ h6 {
 }
 @media (min-width: 992px) and (min-width: 1200px) and (max-width: 1440px) {
   .navbar .navbar-custom {
-    padding: 0 12px 24px;
+    padding: 0 12px 0 12px;
   }
 }
 @media (max-width: 1199px) {
@@ -499,7 +539,7 @@ h6 {
   font-family: 'Geometria', sans-serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   /* 18px */
   letter-spacing: 0.36px;
@@ -509,9 +549,14 @@ h6 {
 }
 @media (min-width: 1200px) and (max-width: 1440px) {
   .navbar .navbar-custom .nav-item .nav-link {
-    font-size: 14px;
+    font-size: 12px;
     padding-left: 12px;
     padding-right: 12px;
+  }
+}
+@media (max-width: 1199px) {
+  .navbar .navbar-custom .nav-item .nav-link {
+    padding: 16px;
   }
 }
 .navbar .navbar-custom .nav-item .nav-link:hover {
@@ -533,6 +578,45 @@ h6 {
 }
 .navbar .navbar-custom .input-group-search button:hover img {
   opacity: 1;
+}
+.navbar .navbar-custom .btn {
+  margin-left: 12px;
+}
+.navbar .navbar-lang .nav-item .nav-link {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+@media (max-width: 1199px) {
+  .navbar-lang {
+    flex-direction: row;
+    justify-content: center !important;
+    height: auto !important;
+  }
+}
+.navbar-lang .nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.navbar-lang .nav-item:not(:last-child)::after {
+  content: '/';
+  margin-left: 4px;
+  margin-right: 4px;
+  color: #3A3634;
+}
+.navbar-lang .nav-link {
+  padding: 0;
+  font-family: 'Geometria', sans-serif;
+  font-size: 14px;
+  color: #3A3634;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.navbar-lang .nav-link.active {
+  font-weight: bold;
+}
+.navbar-lang .nav-link:hover {
+  text-decoration: underline;
 }
 .alert-custom {
   background-color: #3A3634;
@@ -615,8 +699,8 @@ h6 {
 }
 @media (min-width: 992px) {
   .navbar-main-custom {
-    padding-left: 56px;
-    padding-right: 44px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 .dropdown-menu {
@@ -661,8 +745,26 @@ h6 {
   color: #8D644B;
   /* Выделение текста */
 }
-.section-custom {
-  margin-bottom: 40px;
+@media (max-width: 1199px) {
+  .dropdown {
+    flex-wrap: wrap;
+  }
+  .dropdown-menu li {
+    flex: 1 1 100%;
+    border-bottom: 1px solid #eee;
+    padding: 12px 16px;
+  }
+  .dropdown-menu li a {
+    text-align: center;
+  }
+  .dropdown-toggle-custom {
+    pointer-events: auto;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .title-wrap {
   text-align: center;
@@ -1004,10 +1106,25 @@ section.border-top {
   text-align: center;
   padding: 32px 16px;
 }
-.stats-block .stats-item img {
+.stats-block .stats-item .stats-block__img {
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  border-radius: 50%;
+  border: 1px solid #8D644B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+.stats-block .stats-item .stats-block__img img {
   max-width: 80px;
-  margin: 0 auto 24px;
-  display: block;
+  width: 34px;
+  height: 34px;
+  stroke-width: 1px;
+  stroke: #8D644B;
 }
 .stats-block .stats-item h2 {
   color: #3A3634;
@@ -1298,7 +1415,7 @@ section.border-top {
 .site-footer h4 {
   color: #3A3634;
   font-family: 'Monument Extended', sans-serif;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 4.76px;
@@ -1362,8 +1479,8 @@ section.border-top {
   justify-content: center;
 }
 .site-footer .footer-social ul li a img {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
 }
 .site-footer .footer-bottom {
   font-family: 'Geometria', sans-serif;

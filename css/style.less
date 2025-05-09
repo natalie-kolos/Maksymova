@@ -66,11 +66,11 @@ h6 {
 }
 
 .btn-custom {
-  padding: 12px 24px 12px 24px;
+  padding: 12px 20px 12px 20px;
   border-radius: @border-radius-sm;
   transition: @transition;
   font-family: @font-secondary;
-  font-size: 16px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -82,8 +82,9 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.64px;
 
-
-
+  &:hover {
+    opacity: .8;
+  }
 
   @media @breakpoint-tablet-xl {
     font-size: 14px;
@@ -104,21 +105,24 @@ h6 {
     background-color: @primary;
     transition: @transition;
 
-
-
   }
 
-
+  &.btn-custom__primary-reverse {
+    color: @primary;
+    background-color: @white;
+    transition: @transition;
+  }
 
   &.btn-custom__outline__primary {
     background-color: transparent;
     color: @primary;
     border: 1px solid @primary;
 
+    &:hover {
+      color: @white;
+      background-color: @primary;
+    }
   }
-
-
-
 
   &.btn-text {
     color: @primary;
@@ -153,6 +157,11 @@ h6 {
     background-color: transparent;
     color: @white;
     border: 1px solid @white;
+
+    &:hover {
+      color: @primary;
+      background-color: @white;
+    }
   }
 }
 
@@ -161,6 +170,29 @@ h6 {
     &::before {
       color: @primary;
     }
+  }
+}
+
+.btn-img {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px; // запас для отступа от текста
+  padding-right: 44px; // место под иконку
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 14px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='14' viewBox='0 0 18 14' fill='none'><path d='M1.5 7H16.0833H1.5Z' fill='white'/><path d='M1.5 7H16.0833' stroke='%238D644B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M10.6665 12.8334L16.4998 7.00008L10.6665 1.16675' stroke='%238D644B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -199,6 +231,11 @@ h6 {
 
     img {
       width: 240px;
+      margin-right: 12px;
+
+      @media @breakpoint-mobile {
+        width: 220px;
+      }
     }
 
     p {
@@ -243,7 +280,6 @@ h6 {
   }
 
   .navbar-custom {
-    align-items: flex-end;
 
     .navbar-nav {
       align-items: center;
@@ -253,6 +289,7 @@ h6 {
         height: 100%;
       }
 
+
     }
 
     @media @breakpoint-tablet-min {
@@ -261,7 +298,7 @@ h6 {
       justify-content: center;
 
       @media @breakpoint-laptop {
-        padding: 0 12px 24px;
+        padding: 0 12px 0 12px;
       }
 
     }
@@ -286,7 +323,7 @@ h6 {
         font-family: @font-secondary;
         font-size: 16px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 1;
         /* 18px */
         letter-spacing: 0.36px;
@@ -295,15 +332,21 @@ h6 {
         padding-right: 20px;
 
         @media @breakpoint-laptop {
-          font-size: 14px;
+          font-size: 12px;
           padding-left: 12px;
           padding-right: 12px;
+        }
+
+        @media @breakpoint-tablet-xl {
+          padding: 16px;
         }
 
         &:hover {
           color: @primary;
         }
       }
+
+
     }
 
     input[type="search"] {
@@ -331,8 +374,63 @@ h6 {
       }
 
     }
+
+    .btn {
+      margin-left: 12px;
+    }
+  }
+
+  .navbar-lang {
+    .nav-item {
+
+      .nav-link {
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+    }
   }
 }
+
+.navbar-lang {
+
+  @media @breakpoint-tablet-xl {
+    flex-direction: row;
+    justify-content: center !important;
+    height: auto !important;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin-left: 4px;
+      margin-right: 4px;
+      color: @text; // или другой цвет, если нужен
+    }
+  }
+
+  .nav-link {
+    padding: 0;
+    font-family: @font-secondary;
+    font-size: 14px;
+    color: @text;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &.active {
+      font-weight: bold;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
 
 .alert-custom {
   background-color: @dark;
@@ -376,6 +474,7 @@ h6 {
   &.show {
     display: flex;
   }
+
 }
 
 /* Для десктопа: показываем dropdown при наведении */
@@ -441,8 +540,8 @@ h6 {
 
 .navbar-main-custom {
   @media @breakpoint-tablet-min {
-    padding-left: 56px;
-    padding-right: 44px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
@@ -465,6 +564,7 @@ h6 {
   /* Разделение строк */
   padding: 8px 12px;
   transition: background 0.3s ease;
+
 }
 
 .dropdown-menu li a {
@@ -485,9 +585,6 @@ h6 {
 
 }
 
-
-
-
 /* Эффект при наведении */
 .dropdown-menu li:hover {
   border-bottom: 1px solid @primary;
@@ -499,10 +596,31 @@ h6 {
   /* Выделение текста */
 }
 
+@media @breakpoint-tablet-xl {
+  .dropdown {
+    flex-wrap: wrap;
+  }
 
-.section-custom {
-  margin-bottom: 40px;
+  .dropdown-menu li {
+    flex: 1 1 100%;
+    border-bottom: 1px solid #eee;
+    padding: 12px 16px;
+  }
+
+  .dropdown-menu li a {
+    text-align: center;
+  }
+
+  .dropdown-toggle-custom {
+    pointer-events: auto;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
 
 .title-wrap {
   text-align: center;
@@ -890,10 +1008,27 @@ section {
     text-align: center;
     padding: 32px 16px;
 
-    img {
-      max-width: 80px;
-      margin: 0 auto 24px;
-      display: block;
+
+    .stats-block__img {
+      width: 100px;
+      height: 100px;
+      min-width: 100px;
+      border-radius: 50%;
+      border: 1px solid #8D644B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin: 0 auto;
+    margin-bottom: 24px;
+
+      img {
+        max-width: 80px;
+        width: 34px;
+        height: 34px;
+        stroke-width: 1px;
+        stroke: #8D644B;
+      }
     }
 
     h2 {
@@ -1212,7 +1347,7 @@ section {
   h4 {
     color: @text;
     font-family: @font-primary;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: 4.76px;
@@ -1277,8 +1412,8 @@ section {
           justify-content: center;
 
           img {
-            width: 20px;
-            height: 20px;
+            width: 32px;
+            height: 32px;
           }
         }
       }
