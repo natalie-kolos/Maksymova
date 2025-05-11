@@ -73,3 +73,31 @@ function animateNumbers(entries, observer) {
 
 let observer = new IntersectionObserver(animateNumbers, { threshold: 0.5 });
 document.querySelectorAll(".stats").forEach(stat => observer.observe(stat));
+
+$(document).ready(function(){
+  $('.gallery-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: true,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 992, // планшет
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 768, // мобильный
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
+  Fancybox.bind("[data-fancybox='gallery']", {
+    Thumbs: false
+  });
+});
